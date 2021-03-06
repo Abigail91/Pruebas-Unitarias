@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component : AppComponent;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -12,6 +13,8 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+
+    component = new AppComponent();
   }));
 
   it('should create the app', () => {
@@ -31,5 +34,14 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('Investigacion1 app is running!');
+  });
+
+  it('Debe retornar un array ordenado', () => {
+    // Define la entrada del método
+    const a: number[] = [1, 10, 2, 8, 9, 5, 75];
+    // Define el resultado esperado
+    const result: number[] = [1, 2, 5, 8, 9, 10, 75];
+    // Compara el resultado real con el esperado
+    expect(component.BBS(a)).toEqual(result);
   });
 });

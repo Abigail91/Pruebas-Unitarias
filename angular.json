@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Investigacion1"
+    }
+  },
+  "defaultProject": "Investigacion1",
+  "cli": {
+    "analytics": false
+  }
 }
